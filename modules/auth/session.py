@@ -30,7 +30,7 @@ def login_required(resource: Resource, required_permission: Permission):
     return decorator
 
 def display_login():
-    """Display login form"""
+    """Display login form with demo credentials below"""
     # Add styling for fonts
     st.markdown("""
         <style>
@@ -65,7 +65,7 @@ def display_login():
         </div>
     """, unsafe_allow_html=True)
     
-    # Login form
+    # Login form centered
     col1, col2, col3 = st.columns([3,2,3])
     with col2:
         with st.form("login_form"):
@@ -87,6 +87,10 @@ def display_login():
                 else:
                     st.session_state.login_attempts += 1
                     st.error("Invalid username or password")
+        
+        # Show demo credentials under the form
+        from modules.auth.demo_login import show_demo_credentials
+        show_demo_credentials()
     
     # Add some space before footer
     st.markdown("<br><br>", unsafe_allow_html=True)
