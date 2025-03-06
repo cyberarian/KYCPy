@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+python-dotenv
+Pillow
+python-dateutil
+pytz
+opencv-python-headless
+pytesseract
+groq
+google-api-python-client
+google-generativeai
+bcrypt
